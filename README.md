@@ -1,6 +1,6 @@
 # JFObservableArray
 
-[![CI Status](http://img.shields.io/travis/Jamie Forrest/JFObservableArray.svg?style=flat)](https://travis-ci.org/Jamie Forrest/JFObservableArray)
+[![CI Status](http://img.shields.io/travis/jamieforrest/JFObservableArray.svg?style=flat)](https://travis-ci.org/jamieforrest/JFObservableArray)
 [![Version](https://img.shields.io/cocoapods/v/JFObservableArray.svg?style=flat)](http://cocoadocs.org/docsets/JFObservableArray)
 [![License](https://img.shields.io/cocoapods/l/JFObservableArray.svg?style=flat)](http://cocoadocs.org/docsets/JFObservableArray)
 [![Platform](https://img.shields.io/cocoapods/p/JFObservableArray.svg?style=flat)](http://cocoadocs.org/docsets/JFObservableArray)
