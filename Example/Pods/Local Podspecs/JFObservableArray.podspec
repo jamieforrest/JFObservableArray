@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/<GITHUB_USERNAME>/JFObservableArray"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
-  s.author           = { "Jamie Forrest" => "jamie@jamieforrest.com" }
+  s.author           = { "Jamie Forrest" => "jforrest@salesforce.com" }
   s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/JFObservableArray.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 

@@ -20,7 +20,7 @@ it, simply add the following line to your Podfile:
 
 ## Author
 
-Jamie Forrest, jforrest@salesforce.com
+Jamie Forrest, jamie@jamieforrest.com
 
 ## License
 

@@ -1,0 +1,14 @@
+PODS:
+  - JFObservableArray (0.1.0)
+
+DEPENDENCIES:
+  - JFObservableArray (from `../`)
+
+EXTERNAL SOURCES:
+  JFObservableArray:
+    :path: ../
+
+SPEC CHECKSUMS:
+  JFObservableArray: 49deef99e4cfccff89b4e695b4af13eeece26fb4
+
+COCOAPODS: 0.34.0.rc2
