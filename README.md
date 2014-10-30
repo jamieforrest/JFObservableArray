@@ -7,9 +7,7 @@
 
 ## Usage
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
+To run the tests, clone the repo, and run `pod install` from the Example directory first.
 
 ## Installation
 
@@ -50,7 +48,7 @@ And the changes can be observed as follows:
 
 ## Author
 
-Jamie Forrest, jamie@jamieforrest.com
+Jamie Forrest
 
 ## License
 
