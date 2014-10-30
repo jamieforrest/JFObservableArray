@@ -19,7 +19,7 @@ it, simply add the following line to your Podfile:
 
 `JFObservableArray` is a KVO-compliant array wrapper that informs observers of changes to the array's underlying structure. Clients can set up KVO as follows:
 ```
-JFObservableArray *array = [JFObservableArray new];
+JFObservableArray *array = [[JFObservableArray alloc] initWithArray:@[]];
 [array addObserver:self forKeyPath:@"self" options:NSKeyValueObservingOptionNew context:nil];
 ```
 And the changes can be observed as follows:
