@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "JFObservableArray"
-  s.version          = "0.1.0"
+  s.version          = "0.1.1"
   s.summary          = "JFObservableArray is a KVO-compliant array wrapper that informs observers of changes to the array's underlying structure."
   s.description      = <<-DESC
                         `NSMutableArray` is not KVO-compliant, meaning that you cannot observe changes to the underlying structure of the array. `JFObservableArray` adds KVO-compliance to `NSMutableArray`, informing clients of inserted, replaced, and removed objects in the array. This is useful, for example, in cases where you might need to bind a view in the UI to a list of objects (e.g., `UITableView`).
