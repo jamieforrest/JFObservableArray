@@ -17,7 +17,7 @@ it, simply add the following line to your Podfile:
 
 ## Usage
 
-`JFObservableArray` is a KVO-compliant array wrapper that informs observers of changes to the array's underlying structure. Clients can set up KVO as follows:
+`JFObservableArray` is a KVO-compliant array wrapper that informs observers of changes to the array's underlying structure. Over time the class will support more and more of the `NSMutableArray` interface. Clients can set up KVO as follows:
 ```
 JFObservableArray *array = [[JFObservableArray alloc] initWithArray:@[]];
 [array addObserver:self forKeyPath:@"self" options:NSKeyValueObservingOptionNew context:nil];
