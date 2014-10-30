@@ -46,25 +46,9 @@ static NSString *const JFSelfKey = @"self";
     return [self.objects copy];
 }
 
-- (void)willChange:(NSKeyValueChange)change index:(NSUInteger)index
-{
-    NSIndexSet *indexSetForChange = [NSIndexSet indexSetWithIndex:index];
-    [self willChange:change valuesAtIndexes:indexSetForChange forKey:JFSelfKey];
-}
-
-- (void)didChange
-{
-    [self didChangeValueForKey:JFSelfKey];
-}
-
 - (NSUInteger)count
 {
     return self.objects.count;
-}
-
-- (NSArray *)objectsMatchingPredicate:(NSPredicate *)predicate
-{
-    return [self.objects filteredArrayUsingPredicate:predicate];
 }
 
 - (id)objectAtIndex:(NSUInteger)index
@@ -77,17 +61,12 @@ static NSString *const JFSelfKey = @"self";
     return [self.objects indexOfObject:anObject];
 }
 
+#pragma mark - Adding Objects
+
 - (void)addObject:(id)anObject
 {
     [self willChange:NSKeyValueChangeInsertion index:self.count];
     [self.objects addObject:anObject];
-    [self didChange];
-}
-
-- (void)removeObject:(id)anObject
-{
-    [self willChange:NSKeyValueChangeRemoval index:[self.objects indexOfObject:anObject]];
-    [self.objects removeObject:anObject];
     [self didChange];
 }
 
@@ -98,11 +77,47 @@ static NSString *const JFSelfKey = @"self";
     [self didChange];
 }
 
+#pragma mark - Removing Objects
+
+- (void)removeObject:(id)anObject
+{
+    [self willChange:NSKeyValueChangeRemoval index:[self.objects indexOfObject:anObject]];
+    [self.objects removeObject:anObject];
+    [self didChange];
+}
+
+#pragma mark - Replacing Objects
+
 - (void)replaceObjectAtIndex:(NSUInteger)index withObject:(id)anObject
 {
     [self willChange:NSKeyValueChangeReplacement index:index];
     [self.objects replaceObjectAtIndex:index withObject:anObject];
     [self didChange];
+}
+
+#pragma mark - Filtering Objects
+
+- (NSArray *)filteredArrayUsingPredicate:(NSPredicate *)predicate
+{
+    return [self.objects filteredArrayUsingPredicate:predicate];
+}
+
+#pragma mark - KVO Helpers
+
+- (void)willChange:(NSKeyValueChange)change indexes:(NSIndexSet *)indexSet
+{
+    [self willChange:change valuesAtIndexes:indexSet forKey:JFSelfKey];
+}
+
+- (void)willChange:(NSKeyValueChange)change index:(NSUInteger)index
+{
+    NSIndexSet *indexSetForChange = [NSIndexSet indexSetWithIndex:index];
+    [self willChange:change valuesAtIndexes:indexSetForChange forKey:JFSelfKey];
+}
+
+- (void)didChange
+{
+    [self didChangeValueForKey:JFSelfKey];
 }
 
 @end

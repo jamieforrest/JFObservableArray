@@ -21,12 +21,20 @@ FOUNDATION_EXPORT const unsigned char JFObservableArrayVersionString[];
 
 - (NSArray *)objectsCopy;
 - (NSUInteger)count;
-- (NSArray *)objectsMatchingPredicate:(NSPredicate *)predicate;
 - (id)objectAtIndex:(NSUInteger)index;
 - (NSUInteger)indexOfObject:(id)anObject;
+
+#pragma mark - Adding Objects
 - (void)addObject:(id)anObject;
-- (void)removeObject:(id)anObject;
 - (void)insertObject:(id)anObject atIndex:(NSUInteger)index;
+
+#pragma mark - Removing Objects
+- (void)removeObject:(id)anObject;
+
+#pragma mark - Replacing Objects
 - (void)replaceObjectAtIndex:(NSUInteger)index withObject:(id)anObject;
+
+#pragma mark - Filtering Objects
+- (NSArray *)filteredArrayUsingPredicate:(NSPredicate *)predicate;
 
 @end
