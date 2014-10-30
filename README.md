@@ -13,10 +13,40 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-JFObservableArray is available through [CocoaPods](http://cocoapods.org). To install
+`JFObservableArray` is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
     pod "JFObservableArray"
+
+## Usage
+
+`JFObservableArray` is a KVO-compliant array wrapper that informs observers of changes to the array's underlying structure. Clients can set up KVO as follows:
+```
+JFObservableArray *array = [JFObservableArray new];
+[array addObserver:self forKeyPath:@"self" options:NSKeyValueObservingOptionNew context:nil];
+```
+And the changes can be observed as follows:
+```
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    switch ([change[NSKeyValueChangeKindKey] integerValue]) {
+        case NSKeyValueChangeInsertion: {
+            // data was inserted at the indexes in change[NSKeyValueChangeIndexesKey]
+            break;
+        }
+        case NSKeyValueChangeRemoval: {
+            // data was removed at the indexes in change[NSKeyValueChangeIndexesKey]
+            break;
+        }
+        case NSKeyValueChangeReplacement: {
+            // data was replaced at the indexes in change[NSKeyValueChangeIndexesKey]
+            break;
+        }
+        default:
+            break;
+        }
+}
+```
 
 ## Author
 
