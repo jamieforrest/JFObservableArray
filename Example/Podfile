@@ -1,8 +1,4 @@
-source 'https://github.com/CocoaPods/Specs.git'
-
-
 target 'JFObservableArray', :exclusive => true do
-  pod "JFObservableArray", :path => "../"
-
-  
+    pod "JFObservableArray", :path => "../"
+    pod 'OCMock'
 end

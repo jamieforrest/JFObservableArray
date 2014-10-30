@@ -1,14 +1,17 @@
 PODS:
   - JFObservableArray (0.1.0)
+  - OCMock (3.1.1)
 
 DEPENDENCIES:
   - JFObservableArray (from `../`)
+  - OCMock
 
 EXTERNAL SOURCES:
   JFObservableArray:
     :path: ../
 
 SPEC CHECKSUMS:
-  JFObservableArray: 49deef99e4cfccff89b4e695b4af13eeece26fb4
+  JFObservableArray: c3e903b169540526c043193ab8ad32e2155f63e6
+  OCMock: f6cb8c162ab9d5620dddf411282c7b2c0ee78854
 
 COCOAPODS: 0.34.0.rc2
