@@ -25,9 +25,18 @@ static NSString *const JFSelfKey = @"self";
 
 - (instancetype)initWithArray:(NSArray *)array
 {
+    self = [self initWithCapacity:array.count];
+    if (self) {
+        [self.objects addObjectsFromArray:array];
+    }
+    return self;
+}
+
+- (instancetype)initWithCapacity:(NSUInteger)numItems
+{
     self = [super init];
     if (self) {
-        self.objects = [array mutableCopy];
+        self.objects = [[NSMutableArray alloc] initWithCapacity:numItems];
     }
     return self;
 }

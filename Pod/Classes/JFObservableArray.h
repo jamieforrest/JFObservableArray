@@ -17,6 +17,8 @@ FOUNDATION_EXPORT const unsigned char JFObservableArrayVersionString[];
 @interface JFObservableArray : NSObject
 
 - (instancetype)initWithArray:(NSArray *)array;
+- (instancetype)initWithCapacity:(NSUInteger)numItems;
+
 - (NSArray *)objectsCopy;
 - (NSUInteger)count;
 - (NSArray *)objectsMatchingPredicate:(NSPredicate *)predicate;
