@@ -18,6 +18,11 @@ static NSString *const JFSelfKey = @"self";
 
 @implementation JFObservableArray
 
+- (instancetype)init
+{
+    return [self initWithArray:@[]];
+}
+
 - (instancetype)initWithArray:(NSArray *)array
 {
     self = [super init];

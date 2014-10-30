@@ -51,6 +51,12 @@
     [self removeObserver:self.observer forKeyPath:@"array.self"];
 }
 
+- (void)testInitCreatesArray
+{
+    JFObservableArray *array = [JFObservableArray new];
+    XCTAssert(array.objectsCopy);
+}
+
 - (void)testObjectsCount
 {
     JFObservableArray *array = [[JFObservableArray alloc] initWithArray:@[[NSObject new], [NSObject new], [NSObject new], [NSObject new]]];
