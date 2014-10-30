@@ -26,6 +26,7 @@ FOUNDATION_EXPORT const unsigned char JFObservableArrayVersionString[];
 
 #pragma mark - Adding Objects
 - (void)addObject:(id)anObject;
+- (void)addObjectsFromArray:(NSArray *)array;
 - (void)insertObject:(id)anObject atIndex:(NSUInteger)index;
 
 #pragma mark - Removing Objects

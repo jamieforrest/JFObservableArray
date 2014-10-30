@@ -70,6 +70,14 @@ static NSString *const JFSelfKey = @"self";
     [self didChange];
 }
 
+- (void)addObjectsFromArray:(NSArray *)array
+{
+    NSIndexSet *indexes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(self.objects.count, array.count)];
+    [self willChange:NSKeyValueChangeInsertion indexes:indexes];
+    [self.objects addObjectsFromArray:array];
+    [self didChange];
+}
+
 - (void)insertObject:(id)anObject atIndex:(NSUInteger)index
 {
     [self willChange:NSKeyValueChangeInsertion index:index];

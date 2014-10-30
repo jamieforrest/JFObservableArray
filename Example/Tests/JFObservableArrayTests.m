@@ -73,6 +73,13 @@
     XCTAssertEqual([array objectAtIndex:0], obj);
 }
 
+- (void)testAddObjects
+{
+    JFObservableArray *array = [JFObservableArray new];
+    [array addObjectsFromArray:@[[NSObject new], [NSObject new], [NSObject new]]];
+    XCTAssertEqual(array.count, 3);
+}
+
 - (void)testRemoveObject
 {
     NSObject *obj1 = [NSObject new];
@@ -125,6 +132,14 @@
     [self.array addObject:[NSObject new]];
     XCTAssertEqual([[self.observer.change valueForKey:NSKeyValueChangeIndexesKey] firstIndex], 1);
     XCTAssertEqual([[self.observer.change valueForKey:NSKeyValueChangeKindKey] integerValue], NSKeyValueChangeInsertion);
+}
+
+- (void)testKvoTriggersOnAddObjects
+{
+    self.array = [[JFObservableArray alloc] initWithArray:@[[NSObject new]]];
+    [self.array addObjectsFromArray:@[[NSObject new], [NSObject new], [NSObject new]]];
+    NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(1, 3)];
+    XCTAssertTrue([self.observer.change[NSKeyValueChangeIndexesKey] isEqual:indexSet]);
 }
 
 - (void)testKvoTriggersOnRemoveObject
